@@ -22,14 +22,15 @@ const start = async() => {
     //COMPLETELY INDEPENDENT OF VERCEL PLATFORM
 
     nextApp.prepare().then(() => {
-        payload.logger.info('Next.js Started');
+        // payload.logger.info('Next.js Started');
+        app.listen(PORT, async() => {
+        // payload.logger.info(
+        //     `Next.js App URL: ${process.env.NEXT_PUBLIC_SERVER_URL}` //
+        // )
+    })
     })
 
-    app.listen(PORT, async() => {
-        payload.logger.info(
-            `Next.js App URL: ${process.env.NEXT_PUBLIC_SERVER_URL}` //
-        )
-    })
+    
     
 }
 

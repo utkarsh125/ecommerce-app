@@ -10,6 +10,7 @@ import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { trpc } from "@/trpc/client";
+// import { trpc } from "@/trpc/client";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -25,8 +26,8 @@ const Page = () => {
     resolver: zodResolver(AuthCredentialsValidator),
   });
 
-  const { data } = trpc.anyApiRoute.useQuery()//can take strings and numbers both ---> REALTIME Type Changes
-  console.log(data);
+  // const { data } = ;//can take strings and numbers both ---> REALTIME Type Changes
+  // console.log(data);
 
   const onSubmit = ({ email, password }: TAuthCredentialValidator) => {
     //send data to the server

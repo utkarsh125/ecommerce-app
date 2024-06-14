@@ -5,6 +5,9 @@
         "outDir":"dist",
         "noEmit": false,
         "jsx": "react",
+        // "paths": {
+        //     "@/*": ["src/*"]
+        // }
 
     },
 

@@ -1,16 +1,22 @@
+import { Users } from "./collections/Users";
 import { buildConfig } from "payload/config";
+import dotenv from "dotenv";
 import { mongooseAdapter } from "@payloadcms/db-mongodb";
 import path from "path";
 import { slateEditor } from "@payloadcms/richtext-slate";
 import { webpackBundler } from "@payloadcms/bundler-webpack";
 
+dotenv.config({
+  path: path.resolve(__dirname, "../.env"),
+})
 export default buildConfig({
   serverURL: process.env.NEXT_PUBLIC_SERVER_URL || ``,
-  collections: [], //Products and users
+  collections: [Users], //Products and users
   routes: {
     admin: "/sell",
   },
   admin: {
+    user: "users",//this will target the collection we want will not produce slug duplicate error.
     bundler: webpackBundler(),
     meta: {
         titleSuffix: "- DigitalHippo",

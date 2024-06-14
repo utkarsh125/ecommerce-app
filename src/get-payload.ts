@@ -42,6 +42,8 @@ export const getPayLoadClient = async ({
   try {
     cached.client = await cached.promise;
     return cached.client;  // Missing return statement
+
+    
   } catch (error) {
     cached.promise = null;
     throw error;

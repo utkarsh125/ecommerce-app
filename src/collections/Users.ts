@@ -2,7 +2,13 @@ import { CollectionConfig } from "payload/types";
 
 export const Users: CollectionConfig = {
     slug: "users",//collection name in lower case
-    auth: true,
+    auth: {
+        verify: {
+            generateEmailHTML: ({token}) => {
+                return `<p>Hello please verify</p>`
+            }
+        }
+    },
     access: {
         read: () => true,
         create: () => true,

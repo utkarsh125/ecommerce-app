@@ -60,6 +60,7 @@ const Page = () => {
 
         router.push('/')
       },
+      //@ts-ignore
       onError: (err) => {
         if (err.data?.code === 'UNAUTHORIZED') {
           toast.error('Invalid email or password.')

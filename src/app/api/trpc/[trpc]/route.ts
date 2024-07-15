@@ -1,16 +1,15 @@
+// pages/api/trpc/[trpc].ts
 import { appRouter } from "@/trpc";
-//handle the /api/trpc request from `server.ts`
 import { fetchRequestHandler } from "@trpc/server/adapters/fetch";
 
-const handler = (req: request) => {
-  //handle the request
-  fetchRequestHandler({
+const handler = (req: Request) => {
+  return fetchRequestHandler({
     endpoint: "/api/trpc",
     req,
     router: appRouter,
+    //@ts-expect-error
     createContext: () => ({}),
   });
 };
 
-
-export { handler as GET, handler as POST};
+export { handler as GET, handler as POST };

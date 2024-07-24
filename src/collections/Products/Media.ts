@@ -1,6 +1,6 @@
 import { Access, CollectionConfig } from "payload/types";
 
-import { User } from "@/payload-types";
+import { User } from "../../payload-types";
 
 const isAdminOrHasAccessToImages = () : Access=> async({
     req

@@ -1,4 +1,5 @@
 import { Media } from "./collections/Products/Media";
+import { Orders } from "./collections/Orders";
 import { ProductFiles } from "./collections/ProductFile";
 import { Products } from "./collections/Products/Products";
 import { Users } from "./collections/Users";
@@ -14,7 +15,7 @@ dotenv.config({
 })
 export default buildConfig({
   serverURL: process.env.NEXT_PUBLIC_SERVER_URL || ``,
-  collections: [Users, Products, Media, ProductFiles], //Products and users
+  collections: [Users, Products, Media, ProductFiles, Orders], //Products and users
   routes: {
     admin: "/sell",
   },
